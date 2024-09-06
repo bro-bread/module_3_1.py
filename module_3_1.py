@@ -1,18 +1,21 @@
-calls = 0
 def count_calls():
-    calls = 1
+    calls = 0
+    calls = calls + 1
     return print(calls)
+
 def string_info(string):
-    return print([len(string),string.upper(), string.lower()])
+    return print([len(string),string.upper(), string.lower()]), count_calls(), print(" ")
+
+def is_contains(string, list_to_search): # FFFFFFFFFFFFFFFFFFFFFFFF
+    wow = (len(list_to_search))
+    for i in range(1,wow):
+            if string == list_to_search[i] or string.upper() == list_to_search[i] or string.lower() == list_to_search[i]:
+                return print(True), count_calls(), print(" ")
+            else:
+                return print(False), count_calls(), print(" ")
 
 string_info("grsdrgdrgihnihn ih ")
-
-def is_contains(string, list_to_search):
-    for i in list_to_search:
-        if string == list_to_search[i]:
-            return print(True)
-        else:
-            return print(False)
-is_contains("aaa", [1,"aaa",2])
-is_contains("aaa", [1,"rrr",2])
+is_contains("abcd", [1,"abcd"])
+is_contains("abcd", [1,"abcd"])
+is_contains("abc", [1,"abca"])
 count_calls()
